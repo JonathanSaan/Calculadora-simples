@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -11,6 +11,13 @@ div:first-child {
   justify-content: center;
 }
 
+div:first-child input {
+  margin: 0 -31px 0;
+  height: 25px;
+  width: 30px;
+  opacity: 0;
+  z-index: 2;
+}
 div:first-child button {
   border: none;
   border-radius: 10%;
@@ -34,14 +41,13 @@ div#resultado {
 
 div#numeros {
   width: 200px;
-  height: 307px;
+  height: 305px;
 }
 
 div#numeros > button.num {
   border: none;
   background-color: transparent;
- /* color: black;*/
-  margin: 0 0 20px 0;
+  margin: 5px 0 14px 0;
   height: 60px;
   width: 60px;
 }
@@ -54,23 +60,21 @@ div#numeros button:hover, div#funcoes button:hover {
 
 div#funcoes {
   border-left: 1px solid lightgray;
-  margin: -307px 0;
+  background-color: #F1F3F4;
+  margin: -305px 0;
   float: right;
   width: 80px;
-  height: 307px;
+  height: 305px;
 }
 
 div#funcoes > button {
   border: none;
   background: none;
   color: #0a546b;
-  margin: 0 0 19px 5px;
+  margin: 5px 0 14px 9px;
+  font-size: 20px;
   height: 60px;
   width: 60px;
-}
-
-*.active{
-  color: white;
 }
 
 body.active {
@@ -90,10 +94,12 @@ div#numeros.active {
 }
 
 div#funcoes.active {
+  border-left: 1px solid #3f3f3f;
   background-color: #1a1a1aff;
   transition: .3s;
 }
 
 button.num.active {
   color: white;
+  transition: .3s;
 }
