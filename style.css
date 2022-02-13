@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -18,6 +19,7 @@ div:first-child input {
   opacity: 0;
   z-index: 2;
 }
+
 div:first-child button {
   border: none;
   border-radius: 10%;
@@ -35,8 +37,49 @@ div#container {
 }
 
 div#resultado {
+  display: flex;
+  flex-direction: column;
   height: 140px;
   background-color: white;
+}
+
+div#resultado div#resultado-total p {
+  height: 20px;
+  min-width: 270px;
+  text-align: right;
+  white-space: nowrap;
+  margin: -10px 0 0 -10px;
+}
+
+div#resultado div#nums {
+  display: flex;
+  justify-content: end;
+  width: 265px;
+}
+
+div#resultado div#nums h3 {
+  font-size: 40px;
+  text-align: right;
+  width: 240px;
+  margin: 20px 0;
+}
+
+div#resultado div#nums span {
+  height: 80px;
+  margin: 5px 0 0 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: text 1s steps(1) infinite;
+  border-right: 3px solid black;
+}
+
+@keyframes text {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 div#numeros {
@@ -44,18 +87,18 @@ div#numeros {
   height: 305px;
 }
 
-div#numeros > button.num {
+div#numeros button.num {
   border: none;
+  border-radius: 100%;
   background-color: transparent;
-  margin: 5px 0 14px 0;
-  height: 60px;
-  width: 60px;
+  margin: 5px 0 17px 5px;
+  height: 57px;
+  width: 57px;
 }
 
 div#numeros button:hover, div#funcoes button:hover {
   background-color: lightgray;
-  border-radius: 100%;
-  transition: .3s;
+  transition: .2s;
 }
 
 div#funcoes {
@@ -67,14 +110,15 @@ div#funcoes {
   height: 305px;
 }
 
-div#funcoes > button {
+div#funcoes button {
   border: none;
+  border-radius: 100%;
   background: none;
   color: #0a546b;
-  margin: 5px 0 14px 9px;
+  margin: 5px 0 17px 10.5px;
   font-size: 20px;
-  height: 60px;
-  width: 60px;
+  height: 57px;
+  width: 57px;
 }
 
 body.active {
