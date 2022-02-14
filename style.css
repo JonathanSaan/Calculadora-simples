@@ -12,7 +12,7 @@ div:first-child {
   justify-content: center;
 }
 
-div:first-child input {
+div:first-child input[name="mudarcor"] {
   margin: 0 -31px 0;
   height: 25px;
   width: 30px;
@@ -45,7 +45,7 @@ div#resultado {
 
 div#resultado div#resultado-total p {
   height: 20px;
-  min-width: 270px;
+  min-width: 257px;
   text-align: right;
   white-space: nowrap;
   margin: -10px 0 0 -10px;
@@ -57,11 +57,14 @@ div#resultado div#nums {
   width: 265px;
 }
 
-div#resultado div#nums h3 {
+div#resultado div#nums input {
+  border: none;
   font-size: 40px;
   text-align: right;
-  width: 240px;
+  background: none;
+  width: 250px;
   margin: 20px 0;
+  outline: none;
 }
 
 div#resultado div#nums span {
@@ -96,9 +99,8 @@ div#numeros button.num {
   width: 57px;
 }
 
-div#numeros button:hover, div#funcoes button:hover {
+div#numeros button:active, div#funcoes button:active {
   background-color: lightgray;
-  transition: .2s;
 }
 
 div#funcoes {
@@ -111,13 +113,16 @@ div#funcoes {
 }
 
 div#funcoes button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 100%;
   background: none;
   color: #0a546b;
-  margin: 5px 0 17px 10.5px;
+  margin: 5px 0 11px 14px;
   font-size: 20px;
-  height: 40px;
+  height: 50px;
   width: 50px;
 }
 
@@ -129,6 +134,11 @@ body.active {
 
 div#resultado.active {
   background-color: #3f3f3f;
+  transition: .3s;
+}
+
+input#numbers.active {
+  color: white;
   transition: .3s;
 }
 
