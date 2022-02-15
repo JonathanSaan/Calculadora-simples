@@ -22,7 +22,7 @@
         </p>
       </div>
       <div id="nums">
-        <input type="number" name="numbers" id="numbers" value="0"/>
+        <input type="text" id="numbers" />
         <span> </span>
       </div>
     </div>
@@ -30,7 +30,7 @@
       <button class="num">7</button>
       <button class="num">8</button>
       <button class="num">9</button>
-
+    
       <button class="num">4</button>
       <button class="num">5</button>
       <button class="num">6</button>
@@ -41,14 +41,14 @@
 
       <button class="num">0</button>
       <button class="num">.</button>
-      <button class="num">=</button>
+      <button id="eval" onclick="screen.value=eval(screen.value)">=</button>
     </div>
     <div id="funcoes">
-      <button id="del"><img src="img/exclui.png" alt="excluir" /></button>
-      <button>/</button>
-      <button>-</button>
-      <button>x</button>
-      <button>+</button>
+      <button onclick="backspc()" id="del"><img src="img/exclui.png" alt="excluir"/></button>
+      <button class="num">/</button>
+      <button class="num">-</button>
+      <button class="num">×</button> 
+      <button class="num">+</button>
     </div>
   </div>
 </body>
