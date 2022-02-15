@@ -59,6 +59,7 @@ div#resultado div#nums {
 
 div#resultado div#nums input {
   border: none;
+  /*color: black;*/
   font-size: 40px;
   text-align: right;
   background: none;
@@ -90,7 +91,7 @@ div#numeros {
   height: 305px;
 }
 
-div#numeros button.num {
+div#numeros button {
   border: none;
   border-radius: 100%;
   background-color: transparent;
@@ -138,6 +139,7 @@ div#resultado.active {
 }
 
 input#numbers.active {
+  margin: 50px;
   color: white;
   transition: .3s;
 }
@@ -153,7 +155,7 @@ div#funcoes.active {
   transition: .3s;
 }
 
-button.num.active {
+div#numeros button.active {
   color: white;
   transition: .3s;
 }
