@@ -1,37 +1,35 @@
-function getInputValue() {
-  let input = event.target.innerHTML;
-  printValue(input);
+let screenTotal = document.querySelector('p');
+let screen = document.querySelector('#numbers');
+let btn = document.querySelectorAll('.num');
+
+
+for (item of btn) {
+  item.addEventListener('click', (e)=> {
+    btnTotal = e.target.innerHTML;
+    btntext = e.target.innerText;
+
+    if (btntext == '×') {
+      btntext = '*';
+    };
+
+    if (btntext == '÷') {
+      btntext = '/';
+    };
+
+    screen.value += btntext;
+  });
 };
 
-let buttons = document.getElementsByTagName('button');
-for (var i = 0; i < buttons.length; i++) {
-  buttons[i].setAttribute('onclick', 'getInputValue()');
-}
+function backspc() {
+  screen.value = screen.value.substr(0,
+    screen.value.length-1);
+};
 
-function printValue(val) {
-  let out = document.querySelector("#numbers").value;
-  let current = out.innerHTML;
-  
-  if (out.innerHTML == "0") {
-    if (val != [id="del"]) {
-      out.innerHTML = "";
-      out.innerHTML += val;
-    }
-  } else {
-    if (val == [id="del"]) {
-      out.innerHTML = current.slice(0, -1);
-      if (out.innerHTML.length <= 1) {
-        out.innerHTML = "0";
-      }
-    }
-    if (val != [id="del"] && val != "=") {
-      out.innerHTML += val;
-    }
-    if (val == "=") {
-      let res = out.innerHTML;
-      out.innerHTML = eval(res);
-      out.innerHTML = " ";
-    }
-  }
-
-}
+function Resultado() {
+  let resultado = screen.value = eval(screen.value);
+  screenTotal.innerHTML = resultado;
+  if (typeof resultado == 'undefined') {
+    screenTotal.innerHTML = ' ';
+    screen.innerHTML = ' ';
+  };
+};
