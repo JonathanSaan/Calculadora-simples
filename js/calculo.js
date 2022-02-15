@@ -5,7 +5,6 @@ let btn = document.querySelectorAll('.num');
 
 for (item of btn) {
   item.addEventListener('click', (e)=> {
-    btnTotal = e.target.innerHTML;
     btntext = e.target.innerText;
 
     if (btntext == '×') {
@@ -26,10 +25,11 @@ function backspc() {
 };
 
 function Resultado() {
-  let resultado = screen.value = eval(screen.value);
+  let resultado = eval(screen.value);
   screenTotal.innerHTML = resultado;
+  screen.value = screen.value.substr(0,
+    screen.value.length-300);
   if (typeof resultado == 'undefined') {
     screenTotal.innerHTML = ' ';
-    screen.innerHTML = ' ';
   };
 };
